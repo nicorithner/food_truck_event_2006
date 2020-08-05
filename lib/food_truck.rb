@@ -5,11 +5,11 @@ class FoodTruck
 		@inventory = Hash.new{0}
 	end
 	
-	def method
-		
+	def check_stock(item)
+		0	unless @inventory.include?(item1)
 	end
 
-	def method1
+	def stock(item)
 		
 	end
 
