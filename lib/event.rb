@@ -18,4 +18,18 @@ class Event
       truck.inventory.include?(item)
     end
   end
+
+  def items_list
+    @food_trucks.flat_map do |truck|
+    truck.inventory.keys.find_all do |item|
+      truck.check_stock(item)
+      end
+    end.uniq
+  end
+
+  def sorted_item_list
+    items_list.map do |item|
+      item.name
+    end.sort
+  end
 end
