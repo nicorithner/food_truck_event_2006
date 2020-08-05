@@ -49,4 +49,11 @@ class Event
     total_inventory[item][:quantity] > 50
     end
   end
+
+  def sell(item, amount)
+    total_inventory[item][:quantity] >= amount ? total_inventory[item][:quantity] -= amount : false
+    
+    #  binding.pry
+  
+  end
 end
