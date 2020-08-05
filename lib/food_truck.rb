@@ -21,7 +21,5 @@ class FoodTruck
     end
 	end
 
-	def method1
-		
-	end
+	
 end
