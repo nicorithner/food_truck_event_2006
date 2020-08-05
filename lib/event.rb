@@ -27,6 +27,16 @@ class Event
     end.uniq
   end
 
+  def total_inventory
+    total = {}
+    items_list.each do |item|
+      food_trucks = food_trucks_that_sell(item)
+      quantity = food_trucks.sum {|truck| truck.check_stock(item)}
+      total[item] = {food_trucks: food_trucks, quantity: quantity}
+    end
+    total
+  end
+
   def sorted_item_list
     items_list.map do |item|
       item.name
