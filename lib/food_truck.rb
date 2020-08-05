@@ -1,7 +1,8 @@
-class MyClass
-	attr_reader :attribute
-	def initialize(attribute)
-		@something = attribute
+class FoodTruck
+	attr_reader :name, :inventory
+	def initialize(name)
+		@name = name
+		@inventory = Hash.new{0}
 	end
 	
 	def method
